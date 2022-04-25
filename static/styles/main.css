@@ -1,0 +1,193 @@
+/*
+*   CSS for site
+*   
+*   1. Font import
+*   2. Basic
+*   3. Content
+*   4. Footer
+*/
+
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+/* Basic */
+
+html
+{
+    font-size: 10px !important;
+}
+
+body
+{
+    font-family: 'Amatic SC', cursive;
+    font-weight: 300;
+    font-style: normal;
+
+    overflow-x: hidden;
+
+    color: #EBDBB2;
+    background: #282828;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a
+{
+    font-family: 'Amatic SC', cursive;
+    font-weight: normal;
+
+    color: #EBDBB2;
+}
+
+h1
+{
+    font-size: 6rem;
+}
+
+h2
+{
+    font-size: 5rem;
+}
+
+h3
+{
+    font-size: 4rem;
+}
+
+h4
+{
+    font-size: 3rem;
+}
+
+h5
+{
+    font-size: 2rem;
+}
+
+h6
+{
+    font-size: 1.8rem;
+}
+
+p
+{
+    font-size: 1.8rem;
+}
+
+/* content */
+
+.main_content
+{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.main_content div
+{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.map_content div
+{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+/* footer */
+.footer
+{
+    overflow: hidden;
+
+    padding: 2rem 2.5rem;
+
+    text-align: center;
+}
+
+.footer p
+{
+    font-size: 1.8rem;
+
+    display: inline-block;
+
+    margin: 0;
+    margin-right: 1.4em;
+    padding: 2.4rem 0;
+
+    vertical-align: middle;
+    letter-spacing: .05em;
+
+    opacity: .85;
+}
+
+.footer p a
+{
+    border-bottom: 1px solid #ccc;
+}
+
+.footer p a:hover
+{
+    color: #111;
+}
+
+.footer .icons
+{
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    vertical-align: middle;
+}
+
+.footer .icons li
+{
+    font-size: 2.3rem;
+    line-height: 6.4rem;
+    line-height: 6.4rem;
+
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    width: 6.4rem;
+    height: 6.4rem;
+    margin: 0;
+    margin-right: 1em;
+
+
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+    background: #d80f48;
+}
+
+.footer .icons li:hover
+{
+    background: #111;
+}
+
+.footer .icons li a
+{
+    font-size: inherit;
+
+    display: block;
+
+    color: #fff;
+    border: none;
+}

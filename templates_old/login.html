@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero">
+    <!-- FRONT CONTENT -->
+    <div class="front-content">
+        <img src={{url_for("static", filename="login_image2.png")}} class="img-responsive logo" alt="logo">
+        <h1>My test website.<br>Login</h1>
+    </div>
+
+    <div class="front-content">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }} <br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.remember_me() }} {{form.remember_me.label }}</p>
+            <p>{{form.submit() }}</p>
+        </form>
+    </div>
+
+</div>
+
+{% endblock%}

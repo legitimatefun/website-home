@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="main_content">
+    <!-- FRONT CONTENT -->
+    <div class="main_content">
+            <img src={{url_for("static", filename="weather_memes.jpg")}} class="img-responsive logo" alt="weather meme">
+
+        <h1>current conditions for {{ city }} at {{ datetime }}</h1>
+        <img src=https:{{ data["current"]["condition"]["icon"] }}  alt="pic of current condition">
+        <h2>{{ data["current"]["condition"]["text"] }}</h2>
+        <h3>Current temp: {{ data['current']['temp_c'] }}</h3>
+        <h3>Feels like: {{ data["current"]["feelslike_c"] }}</h3>
+        <h3>Air quality index: {{ data["current"]["air_quality"]["gb-defra-index"] }} out of 10</h3>
+        <h4>Learn more about air quality <a href="https://uk-air.defra.gov.uk/air-pollution/daqi"><u>here</u></a></h4>
+    </div>
+</section>
+
+{% endblock%}

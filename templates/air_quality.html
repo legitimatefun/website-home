@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="main_content">
+    <!-- FRONT CONTENT -->
+    <div class="main_content">
+        {% if air_quality == 'Good' %}
+            <img src={{url_for("static", filename="healthy_lungs.gif")}} class="img-responsive logo" alt="logo">
+        {% else %} 
+            <img src={{url_for("static", filename="unhealthy_lungs.gif")}} class="img-responsive logo" alt="logo">
+        {% endif %}
+        <h1>Air quality for {{name_city}}:<br>{{air_quality}}</h1>
+
+    </div>
+
+</section>
+
+{% endblock%}

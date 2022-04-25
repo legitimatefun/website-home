@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero">
+    <!-- FRONT CONTENT -->
+    <div class="front-content">
+        <img src={{url_for("static", filename="registration_image.png")}} class="img-responsive logo" alt="logo">
+        <h1>My test website.<br>Register</h1>
+    </div>
+
+    <div class="front-content">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username.label }}<br>
+                {{ form.username(size=32, placeholder="create a username") }} <br>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32, placeholder="Enter whatever@here.com") }}
+                {% for error in form.email.errors %}
+                <span style="color: red;">[{{ error }}</span>"
+                {% endfor %}
+            </p>            
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32, placeholder="USE:") }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password2.label }}<br>
+                {{ form.password2(size=32, placeholder="passwordsgenerator.net") }}<br>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+
+</div>
+
+{% endblock%}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="main_content">
+    <!-- FRONT CONTENT -->
+    <div class="main_content">
+            <img src={{url_for("static", filename="johntravolta.gif")}} class="img-responsive logo" alt="Pulp fiction John Travolta lost">
+
+        <h1>Weather for:</h1>
+        {% for city in cities %}
+        <ul style="list-style:none">
+            <li><h3><a href="{{url_for('conditions', city=city)}}">{{ city }}</a></h3></li>
+        </ul>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock%}
