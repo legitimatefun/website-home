@@ -8,9 +8,8 @@ from api.secrets import map_box_token
 # plotly and pandas imports 
 import pandas as pd
 from pandas import json_normalize 
-from bson import json_util
-import json
 from pymongo import DESCENDING
+import json
 import plotly.express as px
 import plotly
 
@@ -82,12 +81,8 @@ def world_map_weather():
       {"$sort": {"current.last_updated_epoch": DESCENDING }}, # sorts all records by last update epoch time. As all other times in local time zones this is the best way to sort results. Grab all records because faster to slice dataframe then to use $limit in aggregation.
   ]
   weather_data = conditions.aggregate(pipeline) 
-  # loads the data as json
-  sanitised = json.loads(json_util.dumps(weather_data))
-  # un-nests the data
-  normalised = json_normalize(sanitised)
-  # makes dataframe
-  df = pd.DataFrame(normalised)
+  # make data frame
+  df = pd.json_normalize(weather_data)
   # slicing to get last 13 records (one for each city) - quicker to slice than to use $limit in aggregation
   df_short = df.tail(13).copy()
   # new column to make dots bigger on map - plotly uses column for this - see below
